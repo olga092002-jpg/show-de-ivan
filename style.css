@@ -1,0 +1,164 @@
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #f0f0f0;
+    --fun: #ff3e6c; /* El toque divertido */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HERO MINIMALISTA */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 10%;
+    min-height: 80vh;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.hero-text h1 span {
+    color: var(--fun);
+    font-style: italic;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.hero-image img:hover {
+    filter: grayscale(0%);
+}
+
+/* COLLAGE SUTIL */
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 0 10%;
+    margin-bottom: 100px;
+}
+
+.collage-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.collage-grid img:hover {
+    opacity: 1;
+}
+
+/* LISTA DE SHOWS */
+.shows-container {
+    padding: 100px 15%;
+}
+
+.title-section {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.show-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.show-row:hover {
+    padding-left: 20px;
+    background: #fafafa;
+}
+
+.show-info h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.show-info p {
+    font-weight: 300;
+    color: #777;
+    margin: 5px 0 0;
+}
+
+.show-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* MODAL MODERNO */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.98);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+
+.modal-gallery img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 40px; right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    padding: 100px 10% 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.legal { margin-top: 20px; opacity: 0.5; }
+.legal a { color: black; text-decoration: none; }

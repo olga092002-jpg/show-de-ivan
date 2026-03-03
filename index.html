@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL SHOW DE IVAN | Artista</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>El Show de <span>Ivan</span></h1>
+            <p>SHOWMAN / CANTANTE / ARTISTA</p>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=600&q=80" alt="Ivan">
+        </div>
+    </header>
+
+    <section class="collage-grid">
+        <div class="img-1"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500" alt="Show"></div>
+        <div class="img-2"><img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=500" alt="Concierto"></div>
+        <div class="img-3"><img src="https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=500" alt="Artista"></div>
+        <div class="img-4"><img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?auto=format&fit=crop&w=500" alt="Escenario"></div>
+    </section>
+
+    <main class="shows-container">
+        <h2 class="title-section">Experiencias Musicales</h2>
+        <div class="shows-list">
+            <script>
+                const shows = [
+                    {n: "Gala Acústica", d: "Voz y piano en un ambiente íntimo.", p: "300€"},
+                    {n: "Noche de Pop", d: "Los mejores hits actuales con banda.", p: "500€"},
+                    {n: "Tributo Clásico", d: "Un recorrido por las leyendas del rock.", p: "450€"},
+                    {n: "Jazz & Soul", d: "Elegancia pura para eventos exclusivos.", p: "400€"},
+                    {n: "Fiesta Latina", d: "Ritmo, baile y mucha energía.", p: "550€"},
+                    {n: "Show de Magia", d: "Ilusionismo combinado con música.", p: "350€"},
+                    {n: "Evento Corporativo", d: "Música a medida para empresas.", p: "600€"},
+                    {n: "Bodas de Oro", d: "Canciones que marcaron una vida.", p: "450€"},
+                    {n: "Festival Summer", d: "DJ set con cantante en vivo.", p: "700€"},
+                    {n: "Musical Disney", d: "Para los más pequeños y nostálgicos.", p: "300€"},
+                    {n: "Baladas de Siempre", d: "Romanticismo en estado puro.", p: "350€"},
+                    {n: "Performance Total", d: "Luces, sonido y puesta en escena.", p: "1200€"}
+                ];
+                
+                shows.forEach(s => {
+                    document.write(`
+                        <div class="show-row" onclick="openModal('${s.n}', '${s.d}')">
+                            <div class="show-info">
+                                <h3>${s.n}</h3>
+                                <p>${s.d}</p>
+                            </div>
+                            <div class="show-price">${s.p}</div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </main>
+
+    <div id="showModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <div class="modal-gallery">
+                <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?auto=format&fit=crop&w=800" alt="Ejemplo">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>info@elshowdeivan.com | +34 600 000 000</p>
+        <div class="legal">
+            <a href="#">Aviso Legal</a> | <a href="#">Privacidad</a>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(t, d) {
+            document.getElementById('modalTitle').innerText = t;
+            document.getElementById('modalDesc').innerText = d;
+            document.getElementById('showModal').style.display = "flex";
+        }
+        function closeModal() {
+            document.getElementById('showModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>
